@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'KMTGlobe_Example' do
+  pod 'KMTGlobe', :path => '../'
+
+  target 'KMTGlobe_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
