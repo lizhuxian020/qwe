@@ -25,10 +25,12 @@ done
 # ============= ============= =============
 ProjectPath="${TaskWorkSpacePath}/${scheme}"
 
-InfoPlistPath="${ProjectPath}"
+InfoPlistPath="${ProjectPath}/${scheme}/Info.plist"
+#TODO: 这里要判断infoPlist是否存在, 现在暂时不管
 bundleID=""
 # ============= 获取BundleID =============
-
+bundleID=$(/usr/libexec/PlistBuddy -c "Print CFBundleURLTypes:0:CFBundleURLSchemes:0" "${InfoPlistPath}")
+echo $bundleID
 
 
 
